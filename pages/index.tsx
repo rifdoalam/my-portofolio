@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <Layout>
-      <div className="w-screen h-screen bg-primary px-5 md:px-0 flex flex-col justify-center items-center relative">
+      <div className="w-screen h-screen px-5 md:px-0 flex flex-col justify-center items-center relative">
         <span className="text-[14px] md:text-[24px] font-light">
           Rifdo Shah Alam portofolio’s
         </span>
@@ -72,26 +72,7 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        <div className="absolute bottom-4">
-          <button className="flex items-center gap-2 btn-scroll">
-            Scroll down{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-5 h-5  icon">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-              />
-            </svg>
-          </button>
-        </div>
       </div>
-      <div className="w-screen h-screen"></div>
     </Layout>
   );
 }

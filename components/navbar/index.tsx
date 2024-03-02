@@ -4,22 +4,25 @@ export default function Navbar() {
     <>
       <nav className="w-screen flex justify-between items-center px-[80px] py-[30px] z-10 fixed">
         <div>
-          <Link href={"#"} className="text-[24px] font-bold">
+          <Link href={"/"} className="text-[24px] font-bold">
             R.
           </Link>
         </div>
         <div className="flex list-none text-[16px] text-[#D9D9D9]">
           <li className="pl-10">
-            <Link href={"#"}>About me</Link>
+            <Link className="nav-link" href={"#"}>
+              About me
+            </Link>
           </li>
           <li className="pl-10">
-            <Link href={"#"}>Services</Link>
+            <Link className="nav-link" href={"#"}>
+              Portofolio
+            </Link>
           </li>
           <li className="pl-10">
-            <Link href={"#"}>Portofolio</Link>
-          </li>
-          <li className="pl-10">
-            <Link href={"#"}>Contact</Link>
+            <Link className="nav-link" href={"contact"}>
+              Contact
+            </Link>
           </li>
         </div>
       </nav>

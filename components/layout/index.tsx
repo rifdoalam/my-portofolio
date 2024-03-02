@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"></link>
       </Head>
-      <div>
+      <div className=" bg-primary">
         <Navbar />
         {children}
       </div>

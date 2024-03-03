@@ -15,7 +15,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="pl-10">
-            <Link className="nav-link" href={"#"}>
+            <Link className="nav-link" href={"portofolio"}>
               Portofolio
             </Link>
           </li>

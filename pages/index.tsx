@@ -15,8 +15,8 @@ export default function Home() {
           Portfolio Showcase <br></br>Explore My Creations
         </h1>
         <p className="text-[10px] mt-6 text-center md:text-[18px] font-bold">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor.
+          Building Tomorrow's Solutions Today: Empowering Innovation through
+          Code.
         </p>
         <div className="flex gap-5 mt-10">
           <Link href={"https://www.instagram.com/rifdoalam/"}>

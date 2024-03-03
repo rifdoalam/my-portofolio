@@ -10,11 +10,15 @@ export default function App({ Component, pageProps }: AppProps) {
       <motion.div key={router.pathname}>
         <Component {...pageProps} />
         <motion.div
-          className="slide-in"
+          className="slide-in flex justify-center items-center"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}></motion.div>
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}>
+          <h1 className="text-[100px] text-gradient text-center font-bold">
+            Software Engineer
+          </h1>
+        </motion.div>
         <motion.div
           className="slide-out"
           initial={{ scaleY: 1 }}

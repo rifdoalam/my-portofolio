@@ -10,7 +10,7 @@ export default function Navbar() {
         </div>
         <div className="flex list-none text-[16px] text-[#D9D9D9]">
           <li className="pl-10">
-            <Link className="nav-link" href={"#"}>
+            <Link className="nav-link" href={"about"}>
               About me
             </Link>
           </li>

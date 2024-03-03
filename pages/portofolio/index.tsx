@@ -26,7 +26,7 @@ export default function Portofolio() {
             Creative Ventures
           </h1>
           <div className="flex gap-4 px-[100px] mb-4">
-            <button onClick={goPrev}>
+            <button onClick={goNext}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#d9d9d9"
@@ -41,7 +41,7 @@ export default function Portofolio() {
                 />
               </svg>
             </button>
-            <button onClick={goNext}>
+            <button onClick={goPrev}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

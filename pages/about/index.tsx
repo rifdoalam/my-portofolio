@@ -20,7 +20,7 @@ export default function About() {
           <div className="h-full flex flex-col justify-center">
             <h1 className="font-bold text-[#d9d9d9] text-[25px]">Experience</h1>
           </div>
-          <div>
+          {/* <div>
             <Image
               src={"/rifdo.png"}
               className="absolute bottom-0 left-1  w-[450px]"
@@ -28,7 +28,7 @@ export default function About() {
               height={500}
               alt=""
             />
-          </div>
+          </div> */}
         </div>
       </Layout>
     </>

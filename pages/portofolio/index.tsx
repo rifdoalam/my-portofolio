@@ -1,32 +1,52 @@
 import Layout from "@/components/layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import axios from "axios";
+import CardPorto from "@/components/fragments/card-porto";
+interface Portofolio {
+  title: number;
+  type: string;
+  image: string;
+  role: string;
+  link: string;
+}
 export default function Portofolio() {
   const [swiper, setSwiper] = useState<any>(null);
+  const [data, setData] = useState<any>([]);
   const goNext = () => {
     if (swiper) {
       swiper.slideNext();
     }
   };
-
   const goPrev = () => {
     if (swiper) {
       swiper.slidePrev();
     }
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/porto");
+      setData(res.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Layout>
-        <div className="w-screen h-screen overflow-hidden relative">
-          <h1 className="font-bold text-gradient text-[50px]  pt-[100px] pb-[30px] px-[100px]">
-            Exploring My Portfolio: Showcasing Achievements, Projects, and
-            <br></br>
-            Creative Ventures
+        <div className="w-screen h-screen  overflow-hidden  relative">
+          <h1 className="font-bold text-gradient text-[32px] px-[20px] md:text-[70px]  pt-[100px] md:pb-[30px] md:px-[100px]">
+            Explore My Portfolio: Showcasing creativity one project at a time.
           </h1>
-          <div className="flex gap-4 px-[100px] mb-4">
-            <button onClick={goNext}>
+          <div className="flex gap-4 pl-[20px] md:px-[100px] mb-4">
+            <button onClick={goPrev}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#d9d9d9"
@@ -41,7 +61,7 @@ export default function Portofolio() {
                 />
               </svg>
             </button>
-            <button onClick={goPrev}>
+            <button onClick={goNext}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -59,34 +79,43 @@ export default function Portofolio() {
           </div>
           <Swiper
             onSwiper={setSwiper}
-            slidesPerView={4}
+            breakpoints={{
+              340: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+              },
+            }}
             loop={true}
-            className="mySwiper ml-[100px] layout-porto overflow-x-hidden">
-            <SwiperSlide className="w-full h-[50vh] inline-block bg-slate-500">
-              Slide 1
-            </SwiperSlide>
-            <SwiperSlide className="w-full h-[50vh] inline-block bg-slate-400">
-              Slide 1
-            </SwiperSlide>
-            <SwiperSlide className="w-full h-[50vh] inline-block bg-slate-500">
-              Slide 1
-            </SwiperSlide>
-            <SwiperSlide className="w-full h-[50vh] inline-block bg-slate-400">
-              Slide 1
-            </SwiperSlide>
-            <SwiperSlide className="w-full h-[50vh] inline-block bg-slate-500">
-              Slide 1
-            </SwiperSlide>
+            className="mySwiper ml-4 md:ml-[100px] layout-porto overflow-x-hidden">
+            {data.map((item: Portofolio) => {
+              return (
+                <>
+                  <SwiperSlide className="inline-block">
+                    <CardPorto>
+                      <CardPorto.Body
+                        title={`${item.title}`}
+                        type={`${item.type}`}
+                        role={`${item.role}`}
+                        link={`${item.link}`}
+                      />
+                    </CardPorto>
+                  </SwiperSlide>
+                </>
+              );
+            })}
           </Swiper>
-          {/* 
-          <div className=" ml-[100px]  layout-porto">
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-500"></div>
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-300"></div>
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-500"></div>
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-300"></div>
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-500"></div>
-            <div className="w-3/12 h-[50vh] inline-block bg-slate-300"></div>
-          </div> */}
         </div>
       </Layout>
     </>

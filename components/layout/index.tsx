@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Navbar from "../navbar";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+export default function Layout(props: LayoutProps) {
+  const { children } = props;
   return (
     <>
       <Head>

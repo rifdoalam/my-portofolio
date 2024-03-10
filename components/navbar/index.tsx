@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="w-screen md:flex justify-between items-center px-[40px] md:px-[80px] py-[30px] z-10 fixed">
+      <nav className="w-screen md:flex justify-between items-center px-[15px] md:px-[80px] py-[30px] z-10 fixed">
         <div className="flex items-center justify-between">
           <Link href={"/"} className="text-[24px] font-bold">
             R.
@@ -29,17 +31,27 @@ export default function Navbar() {
 
         <div className="hidden md:flex list-none text-[16px] text-[#D9D9D9]">
           <li className="pl-10">
-            <Link className="nav-link" href={"about"}>
+            <Link
+              className={` ${pathname == "/about" ? "border-b-2" : "nav-link"}`}
+              href={"about"}>
               About me
             </Link>
           </li>
           <li className="pl-10">
-            <Link className="nav-link" href={"portofolio"}>
+            <Link
+              className={` ${
+                pathname == "/portofolio" ? "border-b-2" : "nav-link"
+              }`}
+              href={"portofolio"}>
               Portofolio
             </Link>
           </li>
           <li className="pl-10">
-            <Link className="nav-link" href={"contact"}>
+            <Link
+              className={` ${
+                pathname == "/contact" ? "border-b-2" : "nav-link"
+              }`}
+              href={"contact"}>
               Contact
             </Link>
           </li>
@@ -47,7 +59,7 @@ export default function Navbar() {
       </nav>
       {isOpen && (
         <motion.div className="md:hidden w-screen h-screen items-center bg-[#262626] overflow-hidden absolute z-20">
-          <div className="flex items-center justify-between px-10 pt-10">
+          <div className="flex items-center justify-between px-[15px] pt-9">
             <Link href={"/"} className="text-[34px] font-bold">
               R.
             </Link>
@@ -78,7 +90,7 @@ export default function Navbar() {
                 <Link href={"about"}>About</Link>
               </li>
               <li className="text-[50px] p-3">
-                <Link href={"/portofolio"}>Portofolio</Link>
+                <Link href={"portofolio"}>Portofolio</Link>
               </li>
               <li className="text-[50px] p-3">
                 <Link href={"contact"}>Contact</Link>

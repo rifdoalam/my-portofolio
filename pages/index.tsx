@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <Layout>
-      <div className="w-screen h-screen px-5 md:px-0 flex flex-col justify-center items-center relative">
+      <div className="w-screen h-screen px-5 md:px-[50px] flex flex-col justify-center items-center relative">
         <span className="text-[14px] md:text-[24px] font-light">
           Rifdo Shah Alam portofolio’s
         </span>
-        <h1 className="text-[65px] md:text-[100px] text-gradient text-center font-bold">
-          Portfolio Showcase <br></br>Explore My Creations
+        <h1 className="text-[55px] md:text-[100px] text-gradient text-center font-bold">
+          Portfolio Showcase Explore My Creations
         </h1>
         <p className="text-[10px] mt-6 text-center md:text-[18px] font-bold">
           Building Tomorrow's Solutions Today: Empowering Innovation through

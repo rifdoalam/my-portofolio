@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}>
-          <h1 className="text-[100px] text-gradient text-center font-bold">
+          <h1 className="text-[50px] md:text-[100px] text-gradient text-center font-bold">
             Software Engineer
           </h1>
         </motion.div>
